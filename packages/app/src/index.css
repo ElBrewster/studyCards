@@ -78,5 +78,57 @@ main {
   padding: .5rem;
 }
 
+@media(min-width: 800px) {
+  main {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 1rem;
+  }
+  .my-card-h2,
+  .three-by-five-card {
+      font-size: large;
+  }
+}
+
+@media(min-width: 1000px) {
+  .my-card-h2,
+  .three-by-five-card {
+      font-size: x-large;
+  }
+}
+
+@media(max-width: 400px){
+  .three-by-five-card {
+      min-width: 90vw;
+  }
+}
+
+@media(min-width: 401) {
+main {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1fr);
+  padding: 1rem;
+}
+ 
+.my-card-content,
+.my-card-h2,
+.three-by-five-card {
+  font-size: large;
+  max-width: 500px;
+}
+}
+
+@media(min-width: 1200px) {
+  main {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 1rem;
+  }
+}
+
+
 
 
