@@ -1,69 +1,134 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    color: rgb(41, 35, 35);
+    font-family: 'Architects Daughter', cursive;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    background-color: rgb(121, 122, 131);
+    /* background: radial-gradient(circle 50px, red, yellow 10%, #1e90ff 50%, beige); */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+    padding: 1rem;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+main {
+    /* align-items: center; */
+    display: grid;
+    /* flex-direction: column; */
+    flex: 1;
+    gap: 1rem;
+    padding: 1rem;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+
+.three-by-five-card {
+  aspect-ratio: 5 / 3;
+  background-color: aliceblue;
+  border-top-right-radius: .125rem;
+  border-top-left-radius: .15rem;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  min-width: 380px;
+}
+
+.my-card-h2 {
+  border-bottom: 1px solid red;
+  font-size: large;
+  padding: .5rem .5rem 0 .5rem;
+}
+
+.my-card-content {
+  background: repeating-linear-gradient(
+      to bottom, 
+      aliceblue,
+       aliceblue 14%,
+       rgb(137, 253, 253) 15%,
+       aliceblue 16%,
+       aliceblue 26%,
+       rgb(137, 253, 253) 27%,
+       aliceblue 28%,
+       aliceblue 38%,
+       rgb(137, 253, 253) 39%,
+       aliceblue 40%,
+       aliceblue 50%,
+       rgb(137, 253, 253) 51%,
+       aliceblue 52%,
+       aliceblue 62%,
+       rgb(137, 253, 253) 63%,
+       aliceblue 64%,
+       aliceblue 74%,
+       rgb(137, 253, 253) 75%,
+       aliceblue 76%,
+       aliceblue 86%,
+       rgb(137, 253, 253) 87%,
+       aliceblue 88%,
+       aliceblue 100%);
+  color: darkblue;
+  flex: 1;
+  padding: .5rem;
+}
+
+@media(min-width: 800px) {
+  main {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 1rem;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+  .my-card-h2,
+  .three-by-five-card {
+      font-size: large;
   }
 }
+
+@media(min-width: 1000px) {
+  .my-card-h2,
+  .three-by-five-card {
+      font-size: x-large;
+  }
+}
+
+@media(max-width: 400px){
+  .three-by-five-card {
+      min-width: 90vw;
+  }
+}
+
+@media(min-width: 401) {
+main {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1fr);
+  padding: 1rem;
+}
+ 
+.my-card-content,
+.my-card-h2,
+.three-by-five-card {
+  font-size: large;
+  max-width: 500px;
+}
+}
+
+@media(min-width: 1200px) {
+  main {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 1rem;
+  }
+}
+
+
+
+
