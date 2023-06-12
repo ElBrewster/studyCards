@@ -1,0 +1,17 @@
+{
+  "name": "studycards",
+  "version": "1.0.0",
+  "description": "study tool monorepo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ElBrewster <113723085+ElBrewster@users.noreply.github.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.1.3"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
