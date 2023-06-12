@@ -30,6 +30,53 @@ main {
 }
 
 
+.three-by-five-card {
+  aspect-ratio: 5 / 3;
+  background-color: aliceblue;
+  border-top-right-radius: .125rem;
+  border-top-left-radius: .15rem;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  min-width: 380px;
+}
+
+.my-card-h2 {
+  border-bottom: 1px solid red;
+  font-size: large;
+  padding: .5rem .5rem 0 .5rem;
+}
+
+.my-card-content {
+  background: repeating-linear-gradient(
+      to bottom, 
+      aliceblue,
+       aliceblue 14%,
+       rgb(137, 253, 253) 15%,
+       aliceblue 16%,
+       aliceblue 26%,
+       rgb(137, 253, 253) 27%,
+       aliceblue 28%,
+       aliceblue 38%,
+       rgb(137, 253, 253) 39%,
+       aliceblue 40%,
+       aliceblue 50%,
+       rgb(137, 253, 253) 51%,
+       aliceblue 52%,
+       aliceblue 62%,
+       rgb(137, 253, 253) 63%,
+       aliceblue 64%,
+       aliceblue 74%,
+       rgb(137, 253, 253) 75%,
+       aliceblue 76%,
+       aliceblue 86%,
+       rgb(137, 253, 253) 87%,
+       aliceblue 88%,
+       aliceblue 100%);
+  color: darkblue;
+  flex: 1;
+  padding: .5rem;
+}
 
 
 
