@@ -1,5 +1,6 @@
 import express, {Express, Request, Response, NextFunction} from "express";
 import dotenv from "dotenv";
+import cardQuestions from "./data/cardQuestions";
 
 dotenv.config();
 
@@ -8,13 +9,28 @@ const port = process.env.PORT;
 
 const myLogger = function ( req: Request, res: Response, next: NextFunction) {
   console.log("LOGGED");
+  console.log(`${req.method} ${req.url}`)
+  next();
+}
+
+interface TimeKeeping extends Request {
+  time: number;
+}
+
+const requestTime = (req: TimeKeeping, res: Response, next: NextFunction) => {
+  req.time = Date.now();
+  console.log(`${req.time}`);
   next();
 }
 
 app.use(myLogger);
+app.use(requestTime);
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Express + TypeScript Server is a go');
+  // res.send('Express + TypeScript Server is a go');
+  res.send(cardQuestions)
+
+  console.log("req: ", req);
 });
 
 app.listen(port, () => {
