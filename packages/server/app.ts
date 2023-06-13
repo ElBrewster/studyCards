@@ -26,11 +26,13 @@ const requestTime = (req: TimeKeeping, res: Response, next: NextFunction) => {
 
 app.use(cors());
 app.use(myLogger);
-app.use(requestTime);
+app.use((req: Request, res: Response, next: NextFunction) => {
+  requestTime(req as TimeKeeping, res, next);
+});
 
 app.get('/', (req: Request, res: Response) => {
   // res.send('Express + TypeScript Server is a go');
-  res.send(cardQuestions)
+  res.send(cardQuestions);
 
   console.log("req: ", req);
 });
