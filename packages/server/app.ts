@@ -1,5 +1,6 @@
 import express, {Express, Request, Response, NextFunction} from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import cardQuestions from "./data/cardQuestions";
 
 dotenv.config();
@@ -23,6 +24,7 @@ const requestTime = (req: TimeKeeping, res: Response, next: NextFunction) => {
   next();
 }
 
+app.use(cors());
 app.use(myLogger);
 app.use(requestTime);
 
