@@ -6,7 +6,16 @@ in `packages/database` directory `npm init` for the `package.json`
 make directory `prisma` and files `schema.prisma` and `seed.ts`
 make directory `src` with file `index.ts`
 `npm install typescript ts-node @types/node --save-dev`
-`npm init -w ./packages/some-workspace-name`
+add workspace: `npm init -w ./packages/database`
+initialize TypeScript: `npx tsc --init`
+install prisma `npm install prisma --save-dev`
+`npx prisma init --datasource-provider sqlite`
+--- From Terminal: ---
+Next steps:
+
+1. Set the DATABASE_URL in the .env file to point to your existing database. If your database has no tables yet, read https://pris.ly/d/getting-started
+2. Run prisma db pull to turn your database schema into a Prisma schema.
+3. Run prisma generate to generate the Prisma Client. You can then start querying your database.
 
 ---
 
