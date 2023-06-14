@@ -1,16 +1,16 @@
 import express, { Request, Response, NextFunction} from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import connect from "connect";
 import notifier from "node-notifier";
 import errorHandler from "errorhandler";
 import cardQuestions from "./data/cardQuestions.js";
+import {Moment} from "moment";
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT;
-const myConnect = connect();
+let moment = require("moment");
 
 interface TimeKeeping extends Request {
   time: number;
@@ -25,7 +25,6 @@ if (process.env.NODE_ENV === "development") {
   app.use(errorHandler({log: errorNotification}));
 }
 
-
 app.use(cors());
 
 const myLogger = function ( req: Request, res: Response, next: NextFunction) {
@@ -39,21 +38,19 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   requestTime(req as TimeKeeping, res, next);
 });
 
-
 const requestTime = (req: TimeKeeping, res: Response, next: NextFunction) => {
-  req.time = Date.now();
-  console.log(`${req.time}`);
+  let now = moment()
+  req.time = now;
+  console.log(`Moment: ${req.time}`);
   next();
 }
-
-
 
 app.get('/', (req: Request, res: Response) => {
   // res.send('Express + TypeScript Server is a go');
   res.send(cardQuestions);
 });
 
-app.listen(port, (err?) => {
+app.listen(port, (err?: Error) => {
   if (err) {
     return console.error(err);
   }
