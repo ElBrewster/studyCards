@@ -71,3 +71,16 @@ the scripts file needs:
 - Close the database connections when the script terminates
 
 check out `npx prisma studio` GUI to see database data
+
+## Adding Express Server
+
+1. Add dependencies:
+
+- `npm install --save express`
+- `npx tsc --init`
+- in tsconfig uncommented `outDir` and set it to `./dist` (check reasoning for this?)
+  (Q. does "main" in `package.json` mean anything important?)
+- `npm i @types/express --save-dev`
+- `npm i @types/node --save-dev`
+- `npm i ts-node --save-dev`
+- `npm install -D typescript`

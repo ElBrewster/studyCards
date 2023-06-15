@@ -23,3 +23,6 @@ main()
         await prisma.$disconnect();
         process.exit(1);
     });
+
+    // is this the same as seed.ts I see in prisma folders elswhere?
+    // do we need one function or file to seed the database with many files, and then one to add posts?
