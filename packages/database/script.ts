@@ -1,9 +1,17 @@
+//the query interface to the database
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
-
+//queries go inside the main function:
 async function main() {
-    //queries going here
+    const noteCard = await prisma.noteCard.create({
+        data: {
+            question: "What is CORS short for?",
+            title: "CORS",
+            answer: "Cross-Origin Resource Sharing"
+        },
+    });
+    console.log(noteCard);
 }
 
 main()
