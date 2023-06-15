@@ -79,8 +79,15 @@ check out `npx prisma studio` GUI to see database data
 - `npm install --save express`
 - `npx tsc --init`
 - in tsconfig uncommented `outDir` and set it to `./dist` (check reasoning for this?)
-  (Q. does "main" in `package.json` mean anything important?)
-- `npm i @types/express --save-dev`
+(Q. does "main" in `package.json` mean anything important?)
+<!-- - `npm i @types/express --save-dev`
 - `npm i @types/node --save-dev`
-- `npm i ts-node --save-dev`
-- `npm install -D typescript`
+- `npm i ts-node --save-dev` -->
+- `npm install -D typescript ts-node @types/node`
+  ( `--save-dev` is the same as `-D`)
+
+command to seed database `npx prisma db seed`
+
+## Research/Refs
+
+[walkthrough](https://www.freecodecamp.org/news/build-nodejs-database-using-prisma-orm/)
