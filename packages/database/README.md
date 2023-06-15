@@ -23,6 +23,7 @@ Next steps:
 `brew install --cask dbeaver-community`
 [ref](https://dbeaver.com/2022/03/03/how-to-create-database-connection-in-dbeaver/)
 `npx prisma migrate dev --name init`
+follow along [here](https://www.prisma.io/docs/getting-started/quickstart)
 
 ## SQLite, a 'Database Connector', and Prisma
 
