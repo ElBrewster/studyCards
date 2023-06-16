@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { nanoid } from "nanoid";
 import Header from "./Header";
+import Footer from "./Footer";
 import Nav from "./Nav";
 
 export default function Layout() {
@@ -23,6 +24,7 @@ export default function Layout() {
                 </nav>
             </div>
             <Outlet />
+            <Footer />
         </div>
     );
 }
