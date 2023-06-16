@@ -1,19 +1,23 @@
-# I'm dyslexic and I've been ready MySQL instead of SQLite all day long :sobs:
+# I'm dyslexic and I've been ready MySQL instead of SQLite all day long :sobs in developer:
 
 ## Set Up Prisma ORM
 
 in `packages/database` directory `npm init` for the `package.json`
-make directory `prisma` and files `schema.prisma` and `seed.ts`
-make directory `src` with file `index.ts`
+
+<!-- make directory `prisma` and files `schema.prisma` and `seed.ts` (this is wrong, there's a command that will do it for you when you init prisma, see below)
+make directory `src` with file `index.ts` -->
+
 `npm install typescript ts-node @types/node --save-dev`
 add workspace: `npm init -w ./packages/database`
 initialize TypeScript: `npx tsc --init`
-install prisma `npm install prisma --save-dev`
-`npx prisma init --datasource-provider sqlite`
+install prisma client: `npm install prisma --save-dev`
+set up Prisma: `npx prisma init --datasource-provider sqlite` (this sets up prisma directory and schema file)
+(next add models to schema file)
+
 --- From Terminal: ---
 Next steps:
 
-1. Set the DATABASE_URL in the .env file to point to your existing database. If your database has no tables yet, read https://pris.ly/d/getting-started
+1. Set the DATABASE_URL in the .env file to point to your existing database. If your database has no tables yet, [read](https://pris.ly/d/getting-started)
 2. Run prisma db pull to turn your database schema into a Prisma schema.
 3. Run prisma generate to generate the Prisma Client. You can then start querying your database.
 
@@ -22,7 +26,7 @@ Next steps:
 `brew install sqlite`
 `brew install --cask dbeaver-community`
 [ref](https://dbeaver.com/2022/03/03/how-to-create-database-connection-in-dbeaver/)
-`npx prisma migrate dev --name init`
+`npx prisma migrate dev --name init` (This command creates SQL migration file and runs it against db, also creates db files and dotenv file)
 follow along [here](https://www.prisma.io/docs/getting-started/quickstart)
 
 ## SQLite, a 'Database Connector', and Prisma
@@ -31,6 +35,7 @@ follow along [here](https://www.prisma.io/docs/getting-started/quickstart)
 [sqlite.org](https://www.sqlite.org/index.html)
 
 configure `datasource` block in the prisma schema file:
+(not sure whether this is done automatically for you with the prisma init command?)
 
 ```prisma
 datasource db {
@@ -39,34 +44,50 @@ datasource db {
 }
 ```
 
-<!-- ## MySQL Database [sobs in developer]
-[From](https://dev.mysql.com/doc/mysql-getting-started/en/#mysql-getting-started-installing)
-- The recommended way for installing MySQL on macOS is to use the macOS installer package.
-- Before proceeding with the installation, be sure to stop all running MySQL server instances by using either the MySQL Manager Application (on macOS Server), the preference pane, or mysqladmin shutdown on the command line. [ref](https://dev.mysql.com/doc/refman/8.0/en/macos-installation-pkg.html)
-1. [Downloaded](https://dev.mysql.com/downloads/file/?id=518602)
-2. Installed package and set up password for the root user
-3. Added MySQL workbench, but had to do the archived version per my mac, even tho site said 12 was compatable with 13
-   [ref](https://www.youtube.com/watch?v=7S_tz1z_5bA)
-"sys" is MySQL's internal DB
-Tables
-Views
-Stored Procedures
-Functions
-## Command Line Stuffs
-brew install mysql
-mysql -u root -p;
-(enter password)
-CREATE DATABASE _database_name_
-verify MySQL is installed: `type -a mysql` in terminal
-set up MySQL Workbench
-## Trivias
-MySQL is a widely used relational database management system (RDBMS).
-What is a database?
-A collection of data stored in a format that can easily be accessed.
-We use a software aplication called database management system or DBMS.
-We connect to DBMS and give it instructrions for querying or modifying data.
-The DBMS will execute our instructions and send the results back.
-2 kinds DBMS: Relational (uses SQL language to query or modify data), or NoSQL/non-relational db
-(popular: MySQL, SQL Server, Oracle, he left out PostgreSQL)
-You can say it S-Q-L or 'Sequel' (maybe S-Q-L is less English-speaking centric)
-Let's learn SQL with MySQL! -->
+## Seeding DB
+
+will need script in package.json file to seed db
+
+```json
+"prisma": {
+  "seed": "ts-node prisma/seed.ts"
+}
+```
+
+[on seeding db](https://www.prisma.io/docs/guides/migrate/seed-database#how-to-seed-your-database-in-prisma)
+
+## Query Database
+
+(see #4 in the prisma quickstart for boilerplate setup)
+[#4](https://www.prisma.io/docs/getting-started/quickstart#4-explore-how-to-send-queries-to-your-database-with-prisma-client)
+make a `scripts.ts` file to contain Prisma's database queries
+add new 'create' query to the main() function and then `npx ts-node script.ts ` to execute script file (see in terminal 😊)
+the scripts file needs:
+
+- Import the PrismaClient constructor from the @prisma/client node module
+- Instantiate PrismaClient
+- Define an async function named main to send queries to the database
+- Call the main function
+- Close the database connections when the script terminates
+
+check out `npx prisma studio` GUI to see database data
+
+## Adding Express Server
+
+1. Add dependencies:
+
+- `npm install --save express`
+- `npx tsc --init`
+- in tsconfig uncommented `outDir` and set it to `./dist` (check reasoning for this?)
+(Q. does "main" in `package.json` mean anything important?)
+<!-- - `npm i @types/express --save-dev`
+- `npm i @types/node --save-dev`
+- `npm i ts-node --save-dev` -->
+- `npm install -D typescript ts-node @types/node`
+  ( `--save-dev` is the same as `-D`)
+
+command to seed database `npx prisma db seed`
+
+## Research/Refs
+
+[walkthrough](https://www.freecodecamp.org/news/build-nodejs-database-using-prisma-orm/)

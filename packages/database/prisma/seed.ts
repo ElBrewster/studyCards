@@ -1,0 +1,87 @@
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
+
+const noteCards = [
+    {   
+        question: "What is CORS short for?",
+        title: "CORS",
+        answer: "Cross-Origin Resource Sharing"
+    },
+    {   
+        question: "What is CRUD short for?",
+        title: "CRUD",
+        answer: "Create, Read, Update, Delete: CRUD is an acronym for ways one can operate on stored data."
+    },
+    {   
+        question: "What's DOM?",
+        title: "DOM",
+        answer: "The Document Object Model connects web pages to scripts or programming languages by representing the structure of a document in memory."
+    },
+    {   
+        question: "What's an 'event'?",
+        title: "Event",
+        answer: "An event interface represents an event which takes place in the DOM.",
+    },
+    {   
+        question: "List 7 HTML landmarks",
+        title: "HTML Landmarks",
+        answer: "HTML landmarks are used to categorize and group content on a web page for better acessibility and SEO. <header> <nav> <main> <section> <form> <aside> <footer>"
+    },
+    {   
+        question: "What is the Fetch API?",
+        title: "Web Fetch API",
+        answer: "The Fetch API provides an interface for fetching resources. It uses request and response objects, as well as related concepts such as CORS and the HTTP Origing header semantics. Use fetch() ."
+    },
+    {
+        question: "What's a monorepo?",
+        title: "Monorepo",
+        answer: "In version-control systems, a monorepo ('mono' meaning 'single' and 'repo' being short for 'repository') is a software-development strategy in which the code for a number of projects is stored in the same repository"
+    }, 
+    {
+        question: "What's TypeScript?",
+        title: "TypeScript",
+        answer: "TypeScript is JavaScript with syntax for types. TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale."
+    }, 
+    {
+        question: "What's Rollup?",
+        title: "Rollup",
+        answer: "Rollup is a module bundler for JavaScript which compiles small pieces of code into something larger and more complex, such as a library or application. It uses ES6. ES modules let you freely and seamlessly combine the most useful individual functions from your favorite libraries."
+    },
+    {
+        question: "What's some coding jargon El hates?",
+        title: "jargon",
+        answer: "I wish engineers would stop using the phrase 'syntactic sugar'. It doesn't mean anything. Stop saying lazy stuff. Why not say a technology is abstracting away (x) to make it simpler to do (y)?? Other possibilities: 'batteries included' because obviously I'm going to have to buy my own batteries, those are dead, this is 'right out of the box' that sat on a shelf in WalMart for two years, features are 'baked right in' "
+    },
+    {
+        question: "What is Lerna?",
+        title: "Lerna",
+        answer: "Lerna is the original monorepo tool for JavaScript/TypeScript."
+    }, 
+    {
+        question: "What two problems does Lerna solve?",
+        title: "Lerna Solves",
+        answer: "Lerna runs a command against any number of projects, and it does it in the most efficient way, in the right order, and with the possibility to distribute that on multiple machines. (Secondly,) Lerna manages your publishing process, from version management to publishing to NPM, and it provides a variety of options to make sure any workflow can be accommodated."
+    }
+];
+
+async function main() {
+    console.log(`Start seeding ...`);
+    for(const n of noteCards) {
+        const noteCard = await prisma.noteCard.create({
+            data: n,
+        })
+        console.log(`Created noteCard with id: ${noteCard.id}`);
+    }
+    console.log(`Seeding finished.`)
+}
+
+main()
+  .then(async () => {
+    await prisma.$disconnect()
+  })
+  .catch(async (e) => {
+    console.error(e)
+    await prisma.$disconnect()
+    process.exit(1)
+  })
