@@ -3,7 +3,10 @@ import { Routes, Route } from "react-router";
 import ThreeByFive from "./components/ThreeByFive";
 import cardQuestions from "./data/cardQuestions";
 import Layout from "./components/Layout";
-
+import Home from "./pages/Home";
+import Browse from "./pages/Browse";
+import Add from "./pages/Add";
+import Flash from "./pages/Flash";
 export default function App() {
   const myQuestions = cardQuestions.map((element, index) => {
     return <ThreeByFive key={index} question={element.question} title={element.title} answer={element.answer}/>;
@@ -23,10 +26,10 @@ export default function App() {
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index path="/home" element={}></Route>
-          <Route path="/browse" element={}></Route>
-          <Route path="/add" element={}></Route>
-          <Route path="/flash" element={}></Route>
+          <Route index path="/home" element={<Home />}></Route>
+          <Route path="/browse" element={<Browse />}></Route>
+          <Route path="/add" element={<Add />}></Route>
+          <Route path="/flash" element={<Flash />}></Route>
 
         </Route>
       </Routes>
