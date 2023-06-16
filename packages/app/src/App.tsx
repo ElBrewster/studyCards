@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import ThreeByFive from "./components/threeByFive";
+import ThreeByFive from "./components/ThreeByFive";
 import cardQuestions from "./data/cardQuestions";
 
 export default function App() {
@@ -7,6 +7,7 @@ export default function App() {
     return <ThreeByFive key={index} question={element.question} title={element.title} answer={element.answer}/>;
   });
 
+  // Saving this function for UI testing and imports of data files in place of fetch:
   // const questions = cardQuestions.map((element, index) => {
   //   return <ThreeByFive key={index} question={element.question} title={element.title} answer={element.answer}/>;
   // });
