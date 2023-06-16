@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import ThreeByFive from "./components/ThreeByFive";
 import cardQuestions from "./data/cardQuestions";
 
