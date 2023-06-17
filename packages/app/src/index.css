@@ -13,11 +13,17 @@ body {
     /* background: radial-gradient(circle 50px, red, yellow 10%, #1e90ff 50%, beige); */
     display: flex;
     flex-direction: column;
+    line-height: 1.5;
+
     min-height: 100vh;
 }
 
 h1 {
     padding: 1rem;
+}
+
+a {
+  text-decoration: none;
 }
 
 main {
