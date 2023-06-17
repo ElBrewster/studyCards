@@ -5,8 +5,8 @@ import Home from "./pages/Home";
 import Browse from "./pages/Browse";
 import Add from "./pages/Add";
 import Flash from "./pages/Flash";
-export default function App() {
 
+export default function App() {
   return (
     <div>
       <Routes>

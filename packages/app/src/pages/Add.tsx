@@ -1,5 +1,5 @@
 export default function Add(){
     return(
-        <section></section>
+        <section>.</section>
     );
 }
