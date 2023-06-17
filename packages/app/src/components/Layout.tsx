@@ -19,11 +19,14 @@ export default function Layout() {
             <div className="topContainer">
                 <Nav />
                 <Header />
+            </div>
+            <main>
                 <nav className="nav-notecCardDecks">
                     {navLinks}
                 </nav>
-            </div>
-            <Outlet />
+
+                <Outlet />
+            </main>
             <Footer />
         </div>
     );

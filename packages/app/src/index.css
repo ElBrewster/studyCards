@@ -14,10 +14,10 @@ body {
     display: flex;
     flex-direction: column;
     line-height: 1.5;
-
     min-height: 100vh;
 }
 
+/* header and top nav bar ---------------------------- */
 h1 {
     padding: 1rem;
 }
@@ -26,15 +26,24 @@ a {
   text-decoration: none;
 }
 
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.nav-notecCardDecks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+/* other layout components --------------------------- */
 main {
-    /* align-items: center; */
     display: grid;
-    /* flex-direction: column; */
     flex: 1;
     gap: 1rem;
     padding: 1rem;
 }
-
 
 .three-by-five-card {
   aspect-ratio: 5 / 3;

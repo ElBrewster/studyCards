@@ -1,5 +1,5 @@
 export default function Flash(){
     return(
-        <main></main>
+        <section></section>
     );
 }
