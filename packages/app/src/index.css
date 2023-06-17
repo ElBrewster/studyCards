@@ -2,14 +2,14 @@
 *::after,
 *::before {
     box-sizing: border-box;
-    color: rgb(41, 35, 35);
+    color: #cac9d8;
     font-family: 'Architects Daughter', cursive;
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: rgb(121, 122, 131);
+    background-color: #0b0b13;
     /* background: radial-gradient(circle 50px, red, yellow 10%, #1e90ff 50%, beige); */
     display: flex;
     flex-direction: column;
@@ -18,8 +18,10 @@ body {
 }
 
 /* header and top nav bar ---------------------------- */
+header {
+}
 h1 {
-    padding: 1rem;
+  padding: .5rem 1rem;
 }
 
 a {
@@ -28,17 +30,22 @@ a {
 }
 
 .nav-bar {
+  background-color: #4d2345;
+  border-bottom: 1px solid #d46ec0;
   display: flex;
   justify-content: space-between;
   padding: 1em;
 }
 
-.nav-notecCardDecks {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+.nav-bar > ul > *:hover {
+  color: #12b7d4;
 }
+.nav-bar > ul > *:active {
+color: #a85ff1;
+}
+
 /* other layout components --------------------------- */
+
 .layoutContainer {
   display: flex;
   flex-direction: column;
@@ -75,8 +82,38 @@ footer {
   display: flex;
 }
 
-/* pages --------------------------------------------- */
+/* pages ---(inside main) ------------------------------------------ */
+.stripe {
+  background-color: rgb(212, 110, 192, .3);
+  border-top: 1px solid #d46ec0;
+  height: 1rem;
+}
+
+.nav-notecCardDecks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: .5rem;
+}
+
+.nav-notecCardDecks > * {
+  background-color: #504e6d;
+  border: 1px solid black;
+  border-radius: .2rem;
+  padding: .5rem 1.5rem;
+}
+
+.nav-notecCardDecks > *:hover {
+  background-color: #7875a3;
+  color: #12b7d4;
+}
+
+.nav-notecCardDecks > *:active {
+  background-color: #a85ff1;
+}
+
 .browse-section {
+    background-color: #2d2144;
     display: grid;
     gap: 1rem;
     padding: 1rem;
@@ -96,6 +133,7 @@ footer {
 
 .my-card-h2 {
   border-bottom: 1px solid red;
+  color:#2d2144;
   font-size: large;
   padding: .5rem .5rem 0 .5rem;
 }
