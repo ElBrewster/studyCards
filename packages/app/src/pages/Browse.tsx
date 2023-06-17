@@ -17,7 +17,7 @@ export default function Browse(){
     
         console.log({myQuestions})
     return(
-        <section>
+        <section className="browse-section">
             {/* {questions} */}
             {myQuestions}
         </section>

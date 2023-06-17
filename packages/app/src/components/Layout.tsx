@@ -24,8 +24,9 @@ export default function Layout() {
                 <nav className="nav-notecCardDecks">
                     {navLinks}
                 </nav>
-
-                <Outlet />
+                <div>
+                    <Outlet />
+                </div>
             </main>
             <Footer />
         </div>

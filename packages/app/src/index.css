@@ -39,8 +39,12 @@ a {
 }
 /* other layout components --------------------------- */
 main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.browse-section {
     display: grid;
-    flex: 1;
     gap: 1rem;
     padding: 1rem;
 }
@@ -94,7 +98,7 @@ main {
 }
 
 @media(min-width: 800px) {
-  main {
+  .browse-section {
       display: grid;
       gap: 1rem;
       grid-template-columns: repeat(2, 1fr);
@@ -120,7 +124,7 @@ main {
 }
 
 @media(min-width: 401) {
-main {
+.browse-section {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(1fr);
@@ -136,7 +140,7 @@ main {
 }
 
 @media(min-width: 1200px) {
-  main {
+  .browse-section {
       display: grid;
       gap: 1rem;
       grid-template-columns: repeat(3, 1fr);
