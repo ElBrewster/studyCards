@@ -7,7 +7,7 @@ type Question = {
     more?: string
 }
 
-export default function NewCardForm() {
+export default function NewCardForm({addNewCard}) {
     const [addTitle, setAddTitle] = useState({title: ""});
     const [addQuestion, setAddQuestion] = useState({question: ""});
     const [addAnswer, setAddAnswer] = useState({answer: ""});
@@ -20,6 +20,7 @@ export default function NewCardForm() {
             question: addQuestion.question,
             answer: addAnswer.answer
         }
+        addNewCard({newNoteCard})
         console.log({newNoteCard})
         target.reset();
     }
