@@ -44,9 +44,9 @@ export default function NewCardForm({addNewCard}: AddFormViewProps) {
 
     return(
         <form id="form" onSubmit={(onSubmit) => handleSubmit(onSubmit)}>
-            <input type="text" placeholder="title" name="title" onChange={handleInput} value={addTitle.title}/>
-            <input type="text" placeholder="question" name="question" onChange={handleInput} value={addQuestion.question}/>
-            <textarea placeholder="answer" name="answer" onChange={handleTextArea} value={addAnswer.answer}/>
+            <input type="text" required placeholder="title" name="title" onChange={handleInput} value={addTitle.title}/>
+            <input type="text" required placeholder="question" name="question" onChange={handleInput} value={addQuestion.question}/>
+            <textarea required placeholder="answer" name="answer" onChange={handleTextArea} value={addAnswer.answer}/>
             <button>SUBMIT</button>
         </form>
     )
