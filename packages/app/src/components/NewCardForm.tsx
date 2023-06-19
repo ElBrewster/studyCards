@@ -13,8 +13,15 @@ export default function NewCardForm() {
     const [addAnswer, setAddAnswer] = useState({answer: ""});
 
     function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+        const target = event.target as HTMLFormElement;
         event.preventDefault();
-        console.log({event})
+        const newNoteCard: Question = {
+            title: addTitle.title,
+            question: addQuestion.question,
+            answer: addAnswer.answer
+        }
+        console.log({newNoteCard})
+        target.reset();
     }
 
     function handleInput(event: React.FormEvent<HTMLInputElement>) {
@@ -28,9 +35,9 @@ export default function NewCardForm() {
         const { name, value } = event.target as HTMLTextAreaElement;
         setAddAnswer(prev => ({...prev, [name]: value}));
     }
-    
+
     return(
-        <form onSubmit={(onSubmit) => handleSubmit(onSubmit)}>
+        <form id="form" onSubmit={(onSubmit) => handleSubmit(onSubmit)}>
             <input type="text" placeholder="title" name="title" onChange={handleInput} value={addTitle.title}/>
             <input type="text" placeholder="question" name="question" onChange={handleInput} value={addQuestion.question}/>
             <textarea placeholder="answer" name="answer" onChange={handleTextArea} value={addAnswer.answer}/>
