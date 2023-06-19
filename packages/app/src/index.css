@@ -129,16 +129,30 @@ footer {
 
 .myForm > * {
   background-color: #c9c7f1;
+  border: 1px solid purple;
   border-radius: .1rem;
-  color:#12b7d4;
-  
+  color:#085c6b;
   margin: .5rem 0;
   padding: .5rem;
   resize: none;
 }
 
+.myForm > input:focus,
+.myForm > textarea:focus {
+  background-color: #7fc7d4;
+}
+
 .myForm > button {
   background-color: #d46ec0;
+  max-width: 12rem;
+}
+
+.myForm > button:hover {
+  background-color: #db2fb8;
+}
+
+.myForm > button:active {
+  background-color: #7fc7d4;
 }
 /* single note-card ---------------------------------- */
 .three-by-five-card {
