@@ -8,10 +8,12 @@ type Question = {
 }
 
 type AddFormViewProps = {
-    addNewCard: Function;
+    addNewCard: Function,
+    setShowCard: Function
 }
 
-export default function NewCardForm({addNewCard}: AddFormViewProps) {
+
+export default function NewCardForm({addNewCard, setShowCard}: AddFormViewProps) {
     const [addTitle, setAddTitle] = useState({title: ""});
     const [addQuestion, setAddQuestion] = useState({question: ""});
     const [addAnswer, setAddAnswer] = useState({answer: ""});
@@ -28,6 +30,7 @@ export default function NewCardForm({addNewCard}: AddFormViewProps) {
         setAddTitle(prev => ({...prev, title: ""}));
         setAddQuestion(prev => ({...prev, question: ""}));
         setAddAnswer(prev => ({...prev, answer: ""}));
+        setShowCard(true);
     }
 
     function handleInput(event: React.FormEvent<HTMLInputElement>) {

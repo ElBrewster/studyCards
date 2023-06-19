@@ -1,5 +1,6 @@
 import { useState } from "react";
 import NewCardForm from "../components/NewCardForm";
+import { Outlet } from "react-router";
 
 type Question = {
     question: string,
@@ -9,6 +10,7 @@ type Question = {
 }
 
 export default function Add(){
+    const [showCard, setShowCard] = useState(false);
     const [newCard, addNewCard] = useState<Question>({
         question: "",
         title: "",
@@ -17,7 +19,8 @@ export default function Add(){
 
     return(
         <section>
-            <NewCardForm addNewCard={addNewCard}/>
+            <NewCardForm addNewCard={addNewCard} setShowCard={setShowCard}/>
+            <Outlet />
         </section>
     );
 }
