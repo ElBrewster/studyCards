@@ -25,6 +25,9 @@ export default function NewCardForm({addNewCard}: AddFormViewProps) {
         }
         addNewCard({newNoteCard})
         console.log({newNoteCard})
+        setAddTitle(prev => ({...prev, title: ""}));
+        setAddQuestion(prev => ({...prev, question: ""}));
+        setAddAnswer(prev => ({...prev, answer: ""}));
     }
 
     function handleInput(event: React.FormEvent<HTMLInputElement>) {
