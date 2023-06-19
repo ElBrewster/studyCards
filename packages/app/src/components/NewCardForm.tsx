@@ -7,13 +7,16 @@ type Question = {
     more?: string
 }
 
-export default function NewCardForm({addNewCard}) {
+type AddFormViewProps = {
+    addNewCard: Function;
+}
+
+export default function NewCardForm({addNewCard}: AddFormViewProps) {
     const [addTitle, setAddTitle] = useState({title: ""});
     const [addQuestion, setAddQuestion] = useState({question: ""});
     const [addAnswer, setAddAnswer] = useState({answer: ""});
 
     function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-        const target = event.target as HTMLFormElement;
         event.preventDefault();
         const newNoteCard: Question = {
             title: addTitle.title,
@@ -22,7 +25,6 @@ export default function NewCardForm({addNewCard}) {
         }
         addNewCard({newNoteCard})
         console.log({newNoteCard})
-        target.reset();
     }
 
     function handleInput(event: React.FormEvent<HTMLInputElement>) {
