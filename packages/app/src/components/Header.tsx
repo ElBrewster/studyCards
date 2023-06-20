@@ -4,7 +4,7 @@ export default function Header() {
     return (
         <header>
             <Link to="./">
-                <h1>Flash Cards</h1> 
+                <h1>FLASH CARDS</h1> 
             </Link>
         </header>
     );
