@@ -21,7 +21,8 @@ export default function ThreeByFive({question, title, answer}: Question) {
         </div>
         ) : (
             <div className="card-front">
-                <p>{question}</p>
+                <p className="p-question">{question}</p>
+                <p>. . .</p>
             </div> 
         );
 

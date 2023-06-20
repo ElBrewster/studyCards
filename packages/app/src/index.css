@@ -162,15 +162,28 @@ footer {
 }
 
 /* single note-card ---------------------------------- */
+.card-back,
 .three-by-five-card {
   aspect-ratio: 5 / 3;
   background-color: aliceblue;
   border-top-right-radius: .125rem;
   border-top-left-radius: .15rem;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  color: #2d2144;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-width: 380px;
+}
+
+.card-front {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.p-question {
+  color: #2d2144;
 }
 
 .my-card-h2 {
