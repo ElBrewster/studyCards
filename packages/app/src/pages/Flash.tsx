@@ -10,6 +10,7 @@ type Question = {
 }
 
 export default function Flash(){
+    let showRandom;
     const originalNum = cardQuestions.length;
     const [cardList, setCardList] = useState(cardQuestions);
     const [current, setCurrent] = useState<Question>({
@@ -20,17 +21,19 @@ export default function Flash(){
 
     
     const calcRandom = () => {
-        let listNum = cardList.length;
-        console.log({listNum})
-        let cardNum = Math.floor(Math.random() * listNum);
+        console.log({originalNum})
+        let cardNum = Math.floor(Math.random() * originalNum);
+        //  (listNum + 1?)
         let currentCard = cardList[cardNum];
         setCurrent(current);
-        console.log({currentCard})
+        console.log(current)
+        removeShownCard();
+        // showRandom();
+        let showRandom = <ThreeByFive question={currentCard.question} title={currentCard.title} answer={currentCard.answer}/>
+        return showRandom;
     }
     
-    const showRandom = () => {
-    } 
-    
+ 
     const removeShownCard = () => {
         let seenCard = cardList.findIndex(card => card === current);
         let shorterList = cardList.splice(seenCard, 1);
@@ -53,7 +56,8 @@ export default function Flash(){
     return(
         <section className="flash-container">
             <button onClick={handleOnClick}>Next!</button>
-            <ThreeByFive question={current.question} title={current.title} answer={current.answer}/>
+            {showRandom}
+            {/* <ThreeByFive question={current.question} title={current.title} answer={current.answer}/> */}
         </section>
     );
 }
