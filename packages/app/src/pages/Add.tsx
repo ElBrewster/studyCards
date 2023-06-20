@@ -1,6 +1,6 @@
 import { useState } from "react";
 import NewCardForm from "../components/NewCardForm";
-import { Outlet } from "react-router";
+import ThreeByFive from "../components/ThreeByFive";
 
 type Question = {
     question: string,
@@ -11,16 +11,19 @@ type Question = {
 
 export default function Add(){
     const [showCard, setShowCard] = useState(false);
-    const [newCard, addNewCard] = useState<Question>({
+    const [newNoteCard, addNewCard] = useState<Question>({
         question: "",
         title: "",
         answer: "",
     });
-
+    const toggleCardView = showCard ? <ThreeByFive question={newNoteCard.newNoteCard.question} title={newNoteCard.newNoteCard.title} answer={newNoteCard.newNoteCard.answer}/>: <p>.</p>;
+    console.log(newNoteCard.newNoteCard)
     return(
-        <section>
+        <section className="add-container">
             <NewCardForm addNewCard={addNewCard} setShowCard={setShowCard}/>
-            <Outlet />
+            <div className="card-demo">
+            {toggleCardView}
+            </div>
         </section>
     );
 }

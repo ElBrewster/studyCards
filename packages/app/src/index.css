@@ -1,20 +1,19 @@
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
-    color: #cac9d8;
-    font-family: 'Architects Daughter', cursive;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  color: #cac9d8;
+  font-family: 'Architects Daughter', cursive;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: #0b0b13;
-    /* background: radial-gradient(circle 50px, red, yellow 10%, #1e90ff 50%, beige); */
-    display: flex;
-    flex-direction: column;
-    line-height: 1.5;
-    min-height: 100vh;
+  background-color: #0b0b13;
+  /* background: radial-gradient(circle 50px, red, yellow 10%, #1e90ff 50%, beige); */    display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  min-height: 100vh;
 }
 
 /* header and top nav bar ---------------------------- */
@@ -37,13 +36,13 @@ a {
 
 .nav-bar > ul > *:hover {
   color: #12b7d4;
-}
+} 
+
 .nav-bar > ul > *:active {
-color: #a85ff1;
+  color: #a85ff1;
 }
 
 /* other layout components --------------------------- */
-
 .layoutContainer {
   display: flex;
   flex-direction: column;
@@ -110,11 +109,12 @@ footer {
   background-color: #a85ff1;
 }
 
+.add-container,
 .browse-section {
-    background-color: #2d2144;
-    display: grid;
-    gap: 1rem;
-    padding: 1rem;
+  background-color: #2d2144;
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 /* form ---------------------------------------------- */
@@ -154,6 +154,12 @@ footer {
 .myForm > button:active {
   background-color: #7fc7d4;
 }
+
+.card-demo {
+  max-width: 90vw;
+  margin: 1rem;
+}
+
 /* single note-card ---------------------------------- */
 .three-by-five-card {
   aspect-ratio: 5 / 3;
@@ -208,21 +214,21 @@ footer {
 /* media queries --------------------------------------------------- */
 @media(min-width: 800px) {
   .browse-section {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(2, 1fr);
-      padding: 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
   }
   .my-card-h2,
   .three-by-five-card {
-      font-size: large;
+    font-size: large;
   }
 }
 
 @media(min-width: 1000px) {
   .my-card-h2,
   .three-by-five-card {
-      font-size: x-large;
+    font-size: x-large;
   }
 }
 
@@ -232,28 +238,28 @@ footer {
   }
 }
 
-@media(min-width: 401) {
-.browse-section {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(1fr);
-  padding: 1rem;
-}
- 
-.my-card-content,
-.my-card-h2,
-.three-by-five-card {
-  font-size: large;
-  max-width: 500px;
-}
+@media(min-width: 401px) {
+  .browse-section {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(1fr);
+    padding: 1rem;
+  }
+  
+  .my-card-content,
+  .my-card-h2,
+  .three-by-five-card {
+    font-size: large;
+    max-width: 500px;
+  }
 }
 
 @media(min-width: 1200px) {
   .browse-section {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(3, 1fr);
-      padding: 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1rem;
   }
 }
 
