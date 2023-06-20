@@ -3,8 +3,7 @@
 *::before {
   box-sizing: border-box;
   color: #cac9d8;
-  font-family: 'Architects Daughter', cursive;
-  margin: 0;
+  font-family: 'JetBrains Mono', monospace;  margin: 0;
   padding: 0;
 }
 
@@ -18,6 +17,8 @@ body {
 
 /* header and top nav bar ---------------------------- */
 h1 {
+  
+  font-weight: 900;
   padding: .5rem 1rem;
 }
 
@@ -189,12 +190,14 @@ footer {
 
 .p-question {
   color: #2d2144;
+  font-weight: 500;
 }
 
 .my-card-h2 {
   border-bottom: 1px solid red;
   color:#2d2144;
   font-size: large;
+  font-weight: 600;
   padding: .5rem .5rem 0 .5rem;
 }
 
