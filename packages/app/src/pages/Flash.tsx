@@ -55,7 +55,7 @@ export default function Flash(){
         <section className="flash-container">
             <div className="button-and-counter-container">
                 <button className="random-button" onClick={handleOnClick}>Get A Card</button>
-                <p className="counter">{cardList.length}</p>
+                <div className="counter">{cardList.length}</div>
             </div>
             <ThreeByFive question={current.question} title={current.title} answer={current.answer}/>
         </section>

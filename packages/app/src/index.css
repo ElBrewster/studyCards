@@ -121,8 +121,8 @@ footer {
 
 .button-and-counter-container {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  grid-auto-columns: 50%;
 }
 
 .random-button {
@@ -131,14 +131,16 @@ footer {
   border-radius: .1rem;
   color:#085c6b;
   display: grid;
-  grid-area: 1, 1, 2, 2;
+  /* grid-area: 1, 1, 2, 2; */
   max-width: 12rem;
   padding: .5rem;
 }
 
 .counter {
   display: grid;
-  grid-area: 1, 2, 2, 3;
+  font-size: x-large;
+  font-weight: 900;
+  /* grid-area: 1, 2, 2, 3; */
 }
 .random-button:hover {
   background-color: #db2fb8;
