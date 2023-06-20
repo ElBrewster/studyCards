@@ -10,6 +10,8 @@ type Question = {
 }
 
 export default function Flash(){
+    const originalNum = cardQuestions.length;
+    const [cardList, setCardList] = useState(cardQuestions);
     const [current, setCurrent] = useState<Question>({
         question: "",
         title: "",
@@ -17,22 +19,35 @@ export default function Flash(){
     });
 
     
-    const calcRandom = (cardQuestions) => {
-        let listNum = cardQuestions.length;
+    const calcRandom = () => {
+        let listNum = cardList.length;
         console.log({listNum})
         let cardNum = Math.floor(Math.random() * listNum);
-        let currentCard = cardQuestions.at(cardNum);
+        let currentCard = cardList.at(cardNum);
         setCurrent(current);
         console.log({currentCard})
     }
     
-    const showRandom = (cardQuestions) => {
+    const showRandom = () => {
+
     }
 
+    const removeShownCard = () => {
+
+    }
+
+    const finalMessage = () => {
+        if (cardList.length === 0 ) {
+            return (
+                <p>{`Great Job! You got through ${originalNum} cards!`}</p>
+            )
+        }
+    }
     function handleOnClick() {
         calcRandom();
-        
+        finalMessage();
     }
+    
     return(
         <section className="flash-container">
             <button onClick={handleOnClick}>Next!</button>
