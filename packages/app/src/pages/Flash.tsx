@@ -23,17 +23,18 @@ export default function Flash(){
         let listNum = cardList.length;
         console.log({listNum})
         let cardNum = Math.floor(Math.random() * listNum);
-        let currentCard = cardList.at(cardNum);
+        let currentCard = cardList[cardNum];
         setCurrent(current);
         console.log({currentCard})
     }
     
     const showRandom = () => {
-
-    }
-
+    } 
+    
     const removeShownCard = () => {
-
+        let seenCard = cardList.findIndex(card => card === current);
+        let shorterList = cardList.splice(seenCard, 1);
+        setCardList(shorterList);
     }
 
     const finalMessage = () => {
@@ -43,11 +44,12 @@ export default function Flash(){
             )
         }
     }
+
     function handleOnClick() {
         calcRandom();
         finalMessage();
     }
-    
+
     return(
         <section className="flash-container">
             <button onClick={handleOnClick}>Next!</button>
