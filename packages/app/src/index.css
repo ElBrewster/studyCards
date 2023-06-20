@@ -175,6 +175,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   min-width: 380px;
+  user-select: none;
 }
 
 .card-front {
@@ -183,6 +184,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   min-height: 100%;
+  user-select: none;
 }
 
 .p-question {
