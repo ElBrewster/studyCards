@@ -21,7 +21,7 @@ export default function Flash(){
     
     const calcRandom = () => {
         console.log({originalNum})
-        let cardNum = Math.floor(Math.random() * originalNum + 1);
+        let cardNum = Math.floor(Math.random() * originalNum);
         let currentCard = cardList[cardNum];
         setCurrent(currentCard);
         console.log(currentCard)
@@ -30,12 +30,13 @@ export default function Flash(){
     }
     
  
-    const removeShownCard = () => {
+    const removeShownCard = () => {        
+        console.log("cardlist first:", cardList)
         let seenCard = cardList.findIndex(card => card === current);
         let shorterList = cardList.splice(seenCard, 1);
-        console.log({cardList})
+        console.log("cardlist second:", cardList)
         console.log({shorterList})
-        setCardList(shorterList);
+        setCardList(() => cardList);
     }
 
     const finalMessage = () => {
