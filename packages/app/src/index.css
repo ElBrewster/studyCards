@@ -110,7 +110,8 @@ footer {
 }
 
 .add-container,
-.browse-section {
+.browse-section,
+.flash-container {
   background-color: #2d2144;
   display: grid;
   gap: 1rem;

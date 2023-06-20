@@ -16,6 +16,7 @@ export default function Add(){
         title: "",
         answer: "",
     });
+    
     const toggleCardView = showCard ? <ThreeByFive question={newNoteCard.newNoteCard.question} title={newNoteCard.newNoteCard.title} answer={newNoteCard.newNoteCard.answer}/>: <p>.</p>;
     console.log(newNoteCard.newNoteCard)
     return(

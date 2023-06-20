@@ -19,11 +19,15 @@ export default function NewCardForm({addNewCard, setShowCard}: AddFormViewProps)
     const [addAnswer, setAddAnswer] = useState({answer: ""});
 
     function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+        const {title} = addTitle;
+        const {question} = addQuestion;
+        const {answer} = addAnswer;
+
         event.preventDefault();
         const newNoteCard: Question = {
-            title: addTitle.title,
-            question: addQuestion.question,
-            answer: addAnswer.answer
+            title: title,
+            question: question,
+            answer: answer
         }
         addNewCard({newNoteCard})
         console.log({newNoteCard})
