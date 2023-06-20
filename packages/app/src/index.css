@@ -119,6 +119,29 @@ footer {
   padding: 1rem;
 }
 
+.button-and-counter-container {
+  display: grid;
+  gap: 1rem;
+  grid-auto-columns: 1fr;
+}
+
+.random-button {
+  background-color: #d46ec0;
+  border: 1px solid purple;
+  border-radius: .1rem;
+  color:#085c6b;
+  max-width: 12rem;
+  padding: .5rem;
+}
+
+.random-button:hover {
+  background-color: #db2fb8;
+}
+
+.random-button:active {
+  background-color: #7fc7d4;
+}
+
 /* form ---------------------------------------------- */
 .myForm {
   border: 1px solid purple;
