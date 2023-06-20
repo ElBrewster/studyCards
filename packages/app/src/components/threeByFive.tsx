@@ -7,22 +7,27 @@ type Question = {
     more?: string
 }
 
-export default function ThreeByFive({title, answer}: Question) {
+export default function ThreeByFive({question, title, answer}: Question) {
     const [clicked, setClicked] = useState(false);
 
     function handleOnClick() {
         setClicked(!clicked);
-        if (clicked === true) {
-            return;
-        } else if (clicked === false) {
-            return;
-        }
     }
-    
-    return (
-        <section className="three-by-five-card" onClick={handleOnClick}>
+
+    let toggleDisplay = clicked ? (                
+        <div className="card-back">
             <h2 className="my-card-h2">{title}</h2>
             <p className="my-card-content">{answer}</p>
+        </div>
+        ) : (
+            <div className="card-front">
+                <p>{question}</p>
+            </div> 
+        );
+
+    return (
+        <section className="three-by-five-card" onClick={handleOnClick}>
+            {toggleDisplay}
         </section>
     );
 }
