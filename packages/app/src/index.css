@@ -111,7 +111,7 @@ footer {
 }
 
 .add-container,
-.browse-section,
+.browse-container,
 .flash-container {
   background-color: #2d2144;
   display: grid;

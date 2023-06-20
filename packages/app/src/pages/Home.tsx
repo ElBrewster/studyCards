@@ -12,7 +12,7 @@ export default function Home(){
     });
 
     return(
-        <section>
+        <section className="home-container">
                 <nav className="nav-notecCardDecks">
                     {navLinks}
                 </nav>
