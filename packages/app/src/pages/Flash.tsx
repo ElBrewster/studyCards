@@ -10,46 +10,40 @@ type Question = {
 }
 
 export default function Flash(){
-    const originalNum = cardQuestions.length;
     const [cardList, setCardList] = useState(cardQuestions);
     const [current, setCurrent] = useState<Question>({
         question: "",
         title: "",
         answer: "",
     });
-
+    const [completedCards, setCompletedCards] = useState([]);
     
     const calcRandom = () => {
-        console.log({originalNum})
-        let cardNum = Math.floor(Math.random() * originalNum);
+        let cardNum = Math.floor(Math.random() * cardList.length);
         let currentCard = cardList[cardNum];
         setCurrent(currentCard);
-        console.log(currentCard)
-        removeShownCard();
-        console.log(currentCard.question)
+        // console.log(currentCard)
+        // removeShownCard();
+        // console.log(currentCard.question)
+        // finalMessage();
     }
     
  
     const removeShownCard = () => {        
-        console.log("cardlist first:", cardList)
         let seenCard = cardList.findIndex(card => card === current);
         let shorterList = cardList.splice(seenCard, 1);
-        console.log("cardlist second:", cardList)
-        console.log({shorterList})
-        setCardList(() => cardList);
+        setCompletedCards((prevState): Array => ([...prevState, shorterList]));
+        setCardList((cardList) => [...cardList]);
     }
 
-    const finalMessage = () => {
-        if (cardList.length === 0 ) {
-            return (
-                <p>{`Great Job! You got through ${originalNum} cards!`}</p>
-            )
-        }
-    }
+    const finalMessage = (cardList.length === 0) ? <p>{`Great Job! You got through ${completedCards.length} cards!`}</p> : <p>.</p>;
+
+    const cardToggle = (cardList.length !== 0) ? <ThreeByFive question={current.question} title={current.title} answer={current.answer}/> : <p>.</p>;
 
     function handleOnClick() {
         calcRandom();
-        finalMessage();
+        removeShownCard();
+        // finalMessage();
     }
 
     return(
@@ -58,7 +52,9 @@ export default function Flash(){
                 <button className="random-button" onClick={handleOnClick}>Get A Card</button>
                 <div className="counter">{cardList.length}</div>
             </div>
-            <ThreeByFive question={current.question} title={current.title} answer={current.answer}/>
+            {cardToggle}
+            {finalMessage}
+            {/* <ThreeByFive question={current.question} title={current.title} answer={current.answer}/> */}
         </section>
     );
 }
