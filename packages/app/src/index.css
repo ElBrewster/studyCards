@@ -181,17 +181,17 @@ small {
 .myForm {
   border: 1px solid #ffb9b8;
   border-radius: .2rem;
-  color:#2d2144;
+  color:#181d49;
   display: flex;
   flex-direction: column;
   padding: 1rem;
 }
 
 .myForm > * {
-  background-color: #c9c7f1;
+  background-color: #e0e3ff;
   border: 1px solid #ffb9b8;
   border-radius: .1rem;
-  color:#085c6b;
+  color: #181d49;
   margin: .5rem 0;
   padding: .5rem;
   resize: none;
@@ -199,7 +199,7 @@ small {
 
 .myForm > input:focus,
 .myForm > textarea:focus {
-  background-color: #52ffff;
+  background-color: #ffdbf9;
 }
 
 .myForm > button {
@@ -211,7 +211,7 @@ small {
 }
 
 .myForm > button:hover {
-  background-color: #e0e3ff;
+  background-color: #ff92ed;
   border: 1px solid #ffb9b8;
   color: #181d49;
 }
