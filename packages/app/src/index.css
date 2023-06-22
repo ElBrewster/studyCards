@@ -17,7 +17,7 @@ body {
 /* header and top nav bar ---------------------------- */
 h1 {
   background-color: #181d49;
-  border-bottom: 1px solid #2d3990;
+  border-bottom: 3px solid #232b6d;
   color: #ff5252;
   font-weight: 900;
   padding: .5rem 1rem;
@@ -29,9 +29,9 @@ a {
 }
 
 .nav-bar {
-  background-color: #a0aaff;
+  background-color: #dadeff;
   /* border-bottom: 1px solid #d46ec0; */
-  border-bottom: 2px solid #7b89ff;
+  border-bottom: 2px solid #a0aaff;
   color: #181d49;
   display: flex;
   justify-content: space-between;
@@ -43,11 +43,11 @@ a {
 } 
 
 .nav-bar > ul > *:hover {
-  color: #ff5252;
+  color: #2d3990;
 } 
 
 .nav-bar > ul > *:active {
-  color: #ff5252;
+  color: #4154d6;
 }
 
 /* other layout components --------------------------- */
