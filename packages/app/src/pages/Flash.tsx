@@ -1,3 +1,9 @@
+//Current issues: counter goes up infinitely based on clicks
+//If notecard is clicked, next card will show back instead of front
+//fast clicks skip numbers (useEffect or sth?)
+//state updating incorrectly and I am compensating when I should look stuff up
+
+
 import cardQuestions from "../data/cardQuestions";
 import ThreeByFive from "../components/ThreeByFive";
 import { useState } from "react";
