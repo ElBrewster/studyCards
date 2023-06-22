@@ -17,6 +17,7 @@ body {
 /* header and top nav bar ---------------------------- */
 h1 {
   background-color: #ffdbf9;
+  border-bottom: 2px solid #ffb9b8;
   color: #181d49;
   font-weight: 900;
   padding: .5rem 1rem;
@@ -28,14 +29,18 @@ a {
 }
 
 .nav-bar {
-  background-color: #303992;
+  background-color: #a0aaff;
   /* border-bottom: 1px solid #d46ec0; */
-  border-bottom: 2px solid #181d49;
-
+  border-bottom: 2px solid #7b89ff;
+  color: #181d49;
   display: flex;
   justify-content: space-between;
   padding: 1em;
 }
+
+.nav-bar > ul > * {
+  color: #181d49;
+} 
 
 .nav-bar > ul > *:hover {
   color: #ff5252;
@@ -88,11 +93,11 @@ small {
 }
 /* pages ---(inside main) ------------------------------------------ */
 .stripe {
-  background-color: #2d499b;
+  background-color: #a0aaff;
   /* border-top: 1px solid #d46ec0; */
   /* border-top: 1px solid rgb(252, 177, 177); */
-  border-bottom: 1px solid #0c0f25;
-  border-top: 2px solid #0c0f25;
+  border-bottom: 1px solid #5663ff;
+  border-top: 2px solid #3747b3;
 
   height: 1rem;
 }
