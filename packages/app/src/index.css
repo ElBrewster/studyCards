@@ -121,8 +121,8 @@ small {
 }
 
 .nav-notecCardDecks > *:hover {
-  background-color: #ffdbf9;
-  border: 2px solid #ffb9b8;
+  background-color: #e0e3ff;
+  border: 1px solid #ffb9b8;
   color: #181d49;
 }
 
@@ -159,8 +159,8 @@ small {
 }
 
 .random-button:hover {
-  background-color: #ffdbf9;
-  border: 2px solid #ffb9b8;
+  background-color: #ff92ed;
+  border: 1px solid #ffb9b8;
   color: #181d49;
 }
 
@@ -228,7 +228,7 @@ small {
   border-top-right-radius: .125rem;
   border-top-left-radius: .15rem;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-  color: #2d2144;
+  color: #181d49;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -247,13 +247,13 @@ small {
 }
 
 .p-question {
-  color: #2d2144;
+  color: #181d49;
   font-weight: 500;
 }
 
 .my-card-h2 {
   border-bottom: 1px solid #ff5252;
-  color:#2d2144;
+  color:#181d49;
   font-size: large;
   font-weight: 600;
   padding: .5rem .5rem 0 .5rem;
@@ -285,7 +285,7 @@ small {
        rgb(137, 253, 253) 87%,
        aliceblue 88%,
        aliceblue 100%);
-  color: darkblue;
+  color: #232b6d;
   flex: 1;
   padding: .5rem;
 }
