@@ -10,7 +10,7 @@
 body {
   /* background-color: #0b0b13; */
   /* background-color: #0c0f25; */
-  background-color: #181d49;
+  background-color: #7b89ff;
   /* background: radial-gradient(circle 50px, red, yellow 10%, #1e90ff 50%, beige); */    display: flex;
   flex-direction: column;
   line-height: 1.5;
@@ -19,7 +19,8 @@ body {
 
 /* header and top nav bar ---------------------------- */
 h1 {
-  color: #ffb9b8;
+  background-color: #ffdbf9;
+  color: #181d49;
   font-weight: 900;
   padding: .5rem 1rem;
 }
@@ -32,7 +33,7 @@ a {
 .nav-bar {
   background-color: #303992;
   /* border-bottom: 1px solid #d46ec0; */
-  border-bottom: 2px solid #0c0f25;
+  border-bottom: 2px solid #181d49;
 
   display: flex;
   justify-content: space-between;
@@ -64,11 +65,12 @@ img,
 svg {
   align-self: center;
   display: block;
+  fill: #2d3990;
   max-width: 100%;
 }
 
 footer {
-  border-top: 1px solid #0c0f25;
+  border-top: 1px solid #181d49;
   display: flex;
   padding: .5rem;
 }
@@ -84,6 +86,9 @@ footer {
   display: flex;
 }
 
+small {
+  color: #2d3990;
+}
 /* pages ---(inside main) ------------------------------------------ */
 .stripe {
   background-color: #2d499b;
@@ -105,10 +110,10 @@ footer {
 }
 
 .nav-notecCardDecks > * {
-  background-color: #a0aaff;
-  border: 1px solid #0c0f25;
+  background-color: #4154d6;
+  border: 1px solid #d05373;
   border-radius: .2rem;
-  color: #2959a3;
+  color: #e0e3ff;
   font-weight: 700;
   padding: .5rem 1.5rem;
 }
