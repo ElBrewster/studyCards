@@ -16,12 +16,14 @@ type Question = {
 }
 
 export default function Flash(){
+    const [deckLength, setDeckLength] = useState(cardQuestions.length)
     const [cardList, setCardList] = useState(cardQuestions);
     const [current, setCurrent] = useState<Question>({
         question: "",
         title: "",
         answer: "",
     });
+
     const [completedCards, setCompletedCards] = useState([]);
     
     const calcRandom = () => {
@@ -42,7 +44,7 @@ export default function Flash(){
         setCardList((cardList) => [...cardList]);
     }
 
-    const finalMessage = (cardList.length === 0) ? <p>{`Great Job! You got through ${completedCards.length} cards!`}</p> : <p>.</p>;
+    const finalMessage = (cardList.length === 0) ? <p>{`Great Job! You got through ${deckLength} cards!`}</p> : <p>.</p>;
 
     const cardToggle = (cardList.length !== 0) ? <ThreeByFive question={current.question} title={current.title} answer={current.answer}/> : <p>.</p>;
 
