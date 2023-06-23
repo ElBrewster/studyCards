@@ -1,7 +1,7 @@
-//Current issues: counter goes up infinitely based on clicks
 //If notecard is clicked, next card will show back instead of front
-//fast clicks skip numbers (useEffect or sth?)
+//fast clicks skip numbers
 //state updating incorrectly and I am compensating when I should look stuff up
+//button should be disabled once deck is finished, or should have a 'reset' message, or a 'reset' button render
 
 
 import cardQuestions from "../data/cardQuestions";
@@ -44,7 +44,7 @@ export default function Flash(){
         setCardList((cardList) => [...cardList]);
     }
 
-    const finalMessage = (cardList.length === 0) ? <p>{`Great Job! You got through ${deckLength} cards!`}</p> : <p>.</p>;
+    const finalMessage = (cardList.length === 0) ? <p className="p-final-message">{`Great Job! You got through ${deckLength} cards!`}</p> : <p>.</p>;
 
     const cardToggle = (cardList.length !== 0) ? <ThreeByFive question={current.question} title={current.title} answer={current.answer}/> : <p>.</p>;
 

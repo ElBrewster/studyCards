@@ -170,7 +170,9 @@ small {
   color: #ffa5bb;
 }
 
+.p-final-message,
 .counter {
+  color: #181d49;
   display: grid;
   font-size: x-large;
   font-weight: 900;
@@ -252,6 +254,7 @@ small {
   min-height: 100%;
   user-select: none;
 }
+
 
 .p-question {
   color: #181d49;
