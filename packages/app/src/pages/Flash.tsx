@@ -1,5 +1,4 @@
 //If notecard is clicked, next card will show back instead of front
-//fast clicks skip numbers
 //button should be disabled once deck is finished, or should have a 'reset' message, or a 'reset' button render
 
 
@@ -33,10 +32,10 @@ export default function Flash(){
  
     const removeShownCard = () => {        
         let removeElementIndex = cardList.findIndex(card => card === current);
+        setCardList(cardList.filter(card => card !== cardList[removeElementIndex]));
         //update key or state in threeByFive component
         // cardList.splice(seenCard, 1);
         // setCardList(cardList); 
-        setCardList(cardList.filter(card => card !== cardList[removeElementIndex]))
     }
 
     const finalMessage = (cardList.length === 0) && <p className="p-final-message">{`Great Job! You got through ${deckLength} cards!`}</p>;
