@@ -1,6 +1,5 @@
 //If notecard is clicked, next card will show back instead of front
 //fast clicks skip numbers
-//state updating incorrectly and I am compensating when I should look stuff up
 //button should be disabled once deck is finished, or should have a 'reset' message, or a 'reset' button render
 
 
@@ -17,6 +16,7 @@ type Question = {
 
 export default function Flash(){
     const [deckLength] = useState(cardQuestions.length);
+    
     const [cardList, setCardList] = useState(cardQuestions);
     const [current, setCurrent] = useState<Question>({
         question: "",
@@ -25,27 +25,23 @@ export default function Flash(){
     });
 
     const calcRandom = () => {
-        let cardNum = Math.floor(Math.random() * cardList.length);
-        let currentCard = cardList[cardNum];
+        let randomIndex = Math.floor(Math.random() * cardList.length);
+        let currentCard = cardList[randomIndex];
         setCurrent(currentCard);
-        console.log(currentCard);
     }
     
  
     const removeShownCard = () => {        
-        let seenCard = cardList.findIndex(card => card === current);
+        let removeElementIndex = cardList.findIndex(card => card === current);
         //update key or state in threeByFive component
-        let shorterList = cardList.splice(seenCard, 1);
-        setCardList(cardList); 
+        // cardList.splice(seenCard, 1);
+        // setCardList(cardList); 
+        setCardList(cardList.filter(card => card !== cardList[removeElementIndex]))
     }
 
-    const finalMessage = (cardList.length === 0) ? <p className="p-final-message">{`Great Job! You got through ${deckLength} cards!`}</p> : <p>.</p>;//cut the p tag with .
-    //put 'undefined' or 'null'? what will render nothing and not break
+    const finalMessage = (cardList.length === 0) && <p className="p-final-message">{`Great Job! You got through ${deckLength} cards!`}</p>;
 
-
-    const cardToggle = (cardList.length !== 0) ? <ThreeByFive question={current.question} title={current.title} answer={current.answer}/> : <p>.</p>;//cut the p tag with .
-    //put 'undefined' or 'null'? what will render nothing and not break
-
+    const cardToggle = (cardList.length !== 0) && <ThreeByFive question={current.question} title={current.title} answer={current.answer}/>;
 
     function handleOnClick() {
         calcRandom();
