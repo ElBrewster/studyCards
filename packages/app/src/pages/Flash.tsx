@@ -16,7 +16,7 @@ type Question = {
 }
 
 export default function Flash(){
-    const [deckLength, setDeckLength] = useState(cardQuestions.length)
+    const [deckLength] = useState(cardQuestions.length);
     const [cardList, setCardList] = useState(cardQuestions);
     const [current, setCurrent] = useState<Question>({
         question: "",
@@ -30,15 +30,14 @@ export default function Flash(){
         let cardNum = Math.floor(Math.random() * cardList.length);
         let currentCard = cardList[cardNum];
         setCurrent(currentCard);
-        // console.log(currentCard)
+        console.log(currentCard);
         // removeShownCard();
-        // console.log(currentCard.question)
-        // finalMessage();
     }
     
  
     const removeShownCard = () => {        
         let seenCard = cardList.findIndex(card => card === current);
+        //update key or state in threeByFive component
         let shorterList = cardList.splice(seenCard, 1);
         setCompletedCards((prevState): Array => ([...prevState, shorterList]));
         setCardList((cardList) => [...cardList]);
