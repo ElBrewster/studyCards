@@ -39,18 +39,18 @@ export default function Flash(){
         let seenCard = cardList.findIndex(card => card === current);
         //update key or state in threeByFive component
         let shorterList = cardList.splice(seenCard, 1);
-        setCompletedCards((prevState): Array => ([...prevState, shorterList]));
-        setCardList((cardList) => [...cardList]);
+        setCompletedCards((prevState): Array => ([...prevState, shorterList]));//cut?
+        setCardList(shorterList); //is this right? wouldn't it incorporate 'shorterList' variable? do we need function as param?
     }
 
-    const finalMessage = (cardList.length === 0) ? <p className="p-final-message">{`Great Job! You got through ${deckLength} cards!`}</p> : <p>.</p>;
+    const finalMessage = (cardList.length === 0) ? <p className="p-final-message">{`Great Job! You got through ${deckLength} cards!`}</p> : <p>.</p>;//cut the p tag with .
 
-    const cardToggle = (cardList.length !== 0) ? <ThreeByFive question={current.question} title={current.title} answer={current.answer}/> : <p>.</p>;
+    const cardToggle = (cardList.length !== 0) ? <ThreeByFive question={current.question} title={current.title} answer={current.answer}/> : <p>.</p>;//cut the p tag with .
+    //put 'undefined' or 'null'? what will render nothing and not break the page?
 
     function handleOnClick() {
         calcRandom();
         removeShownCard();
-        // finalMessage();
     }
 
     return(
@@ -61,7 +61,6 @@ export default function Flash(){
             </div>
             {cardToggle}
             {finalMessage}
-            {/* <ThreeByFive question={current.question} title={current.title} answer={current.answer}/> */}
         </section>
     );
 }
