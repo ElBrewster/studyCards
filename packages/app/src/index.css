@@ -36,7 +36,6 @@ a {
 .nav-bar {
   background-color: #dadeff;
   background-color: #e0e0e0;
-  /* border-bottom: 1px solid #d46ec0; */
   border-bottom: 2px solid #a0aaff;
   border-bottom: 2px solid #b1b1b1;
   color: #181d49;
@@ -98,6 +97,7 @@ footer {
 
 .footerNote {
   align-items: center;
+  cursor: default;
   display: flex;
 }
 
@@ -106,16 +106,6 @@ small {
   color: #404040;
 }
 /* pages ---(inside main) ------------------------------------------ */
-.stripe {
-  background-color: #a0aaff;
-  /* border-top: 1px solid #d46ec0; */
-  /* border-top: 1px solid rgb(252, 177, 177); */
-  border-bottom: 1px solid #5663ff;
-  border-top: 2px solid #3747b3;
-
-  height: 1rem;
-}
-
 .nav-notecCardDecks {
   color: #2d499b;
   display: flex;
@@ -158,7 +148,6 @@ small {
 .add-container,
 .browse-container,
 .flash-container {
-  /* background-color: #2d2144; */
   display: grid;
   gap: 1rem;
   padding: 1rem;
@@ -179,7 +168,6 @@ small {
   color:#e0e3ff;
   color: #e5e5e5;
   display: grid;
-  /* grid-area: 1, 1, 2, 2; */
   max-width: 12rem;
   padding: .5rem;
 }
@@ -209,7 +197,6 @@ small {
   display: grid;
   font-size: x-large;
   font-weight: 900;
-  /* grid-area: 1, 2, 2, 3; */
 }
 
 /* form ---------------------------------------------- */
@@ -303,7 +290,6 @@ small {
   user-select: none;
 }
 
-
 .p-question {
   color: #181d49;
   color: #212121;
@@ -346,14 +332,14 @@ small {
        aliceblue 88%,
        aliceblue 100%);
   color: #232b6d;
+  color: #313131;
   flex: 1;
   padding: .5rem;
 }
 
-
 /* media queries --------------------------------------------------- */
 @media(min-width: 800px) {
-  .browse-section {
+  .browse-container {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(2, 1fr);
@@ -379,7 +365,7 @@ small {
 }
 
 @media(min-width: 401px) {
-  .browse-section {
+  .browse-container {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(1fr);
@@ -395,45 +381,10 @@ small {
 }
 
 @media(min-width: 1200px) {
-  .browse-section {
+  .browse-container {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(3, 1fr);
     padding: 1rem;
   }
 }
-
-
-
-
-colors { 
-  color: 
-#ff5252,
-#d05373,
-#a05394, 
-#4154d6, 
-#3747b3, 
-#2d3990, 
-#232b6d, 
-#181d49 }
-
-light {
-  color: 
-  #ffb9b8, 
-  #ffa5bb, 
-  #ff92ed, 
-  #a0aaff, 
-  #8e9bff, 
-  #7b89ff, 
-  #6977ff, 
-  #5663ff }
-lightest {
-  color: 
-  #ffe8e8, 
-  #ffe1e9, 
-  #ffdbf9, 
-  #e0e3ff, 
-  #dadeff, 
-  #d3d8ff, 
-  #cdd2ff, 
-  #c7cbff}
