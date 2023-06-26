@@ -22,17 +22,23 @@ export default function Flash(){
         title: "",
         answer: "",
     });
+    const [removal, setRemoval] = useState(-1);
 
     const calcRandom = () => {
         let randomIndex = Math.floor(Math.random() * cardList.length);
+        console.log("random num in randomizer: ", randomIndex);
         let currentCard = cardList[randomIndex];
         setCurrent(currentCard);
+        console.log("current card from randomizer: ", currentCard);
     }
     
  
     const removeShownCard = () => {        
         let removeElementIndex = cardList.findIndex(card => card === current);
+        console.log("remove card at index: ", removeElementIndex);
+        console.log("with that index remove this card in remover func: ", cardList[removeElementIndex]);
         setCardList(cardList.filter(card => card !== cardList[removeElementIndex]));
+        console.log("--------------------------------")
         //update key or state in threeByFive component
         // cardList.splice(seenCard, 1);
         // setCardList(cardList); 

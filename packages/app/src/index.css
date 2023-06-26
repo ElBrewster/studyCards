@@ -212,7 +212,7 @@ small {
   max-width: 12rem;
 }
 
-.myForm > button:hover {
+.myForm > button {
   background-color: #ff92ed;
   border: 1px solid #ffb9b8;
   color: #181d49;
