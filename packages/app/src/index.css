@@ -2,13 +2,15 @@
 *::after,
 *::before {
   box-sizing: border-box;
-  color: #c7cbff;
+  color:#e0e3ff;
+  color: #e5e5e5;
   font-family: 'JetBrains Mono', monospace;  margin: 0;
   padding: 0;
 }
 
 body {
   background-color: #7b89ff;
+  background-color: #939393;
   flex-direction: column;
   line-height: 1.5;
   min-height: 100vh;
@@ -17,8 +19,11 @@ body {
 /* header and top nav bar ---------------------------- */
 h1 {
   background-color: #181d49;
+  background-color: #212121;
   border-bottom: 3px solid #232b6d;
+  border-bottom: 3px solid #313131;
   color: #ff5252;
+  color: #8a8a8a;
   font-weight: 900;
   padding: .5rem 1rem;
 }
@@ -30,9 +35,12 @@ a {
 
 .nav-bar {
   background-color: #dadeff;
+  background-color: #e0e0e0;
   /* border-bottom: 1px solid #d46ec0; */
   border-bottom: 2px solid #a0aaff;
+  border-bottom: 2px solid #b1b1b1;
   color: #181d49;
+  color: #212121;
   display: flex;
   justify-content: space-between;
   padding: 1em;
@@ -40,14 +48,17 @@ a {
 
 .nav-bar > ul > * {
   color: #181d49;
+  color: #212121;
 } 
 
 .nav-bar > ul > *:hover {
   color: #2d3990;
+  color: #404040;
 } 
 
-.nav-bar > ul > *:active {
+.nav-bar > ul > * {
   color: #4154d6;
+  color: #5f5f5f;
 }
 
 /* other layout components --------------------------- */
@@ -68,11 +79,13 @@ svg {
   align-self: center;
   display: block;
   fill: #2d3990;
+  fill: #404040;
   max-width: 100%;
 }
 
 footer {
   border-top: 1px solid #181d49;
+  border-top: 1px solid #212121;
   display: flex;
   padding: .5rem;
 }
@@ -90,6 +103,7 @@ footer {
 
 small {
   color: #2d3990;
+  color: #404040;
 }
 /* pages ---(inside main) ------------------------------------------ */
 .stripe {
@@ -113,23 +127,32 @@ small {
 
 .nav-notecCardDecks > * {
   background-color: #4154d6;
+  background-color: #5f5f5f;
   border: 1px solid #d05373;
+  border: 1px solid #7d7d7d;
   border-radius: .2rem;
   color: #e0e3ff;
+  color: #e5e5e5;
   font-weight: 700;
   padding: .5rem 1.5rem;
 }
 
 .nav-notecCardDecks > *:hover {
   background-color: #e0e3ff;
+  background-color: #e5e5e5;
   border: 1px solid #ffb9b8;
+  border: 1px solid #cfcfcf;
   color: #181d49;
+  color: #212121;
 }
 
 .nav-notecCardDecks > *:active {
   background-color: #232b6d;
+  background-color: #313131;
   border: 1px solid #4154d6;
+  border: 1px solid #5f5f5f;
   color: #ffa5bb;
+  color: #c3c3c3;
 }
 
 .add-container,
@@ -149,9 +172,12 @@ small {
 
 .random-button {
   background-color: #4154d6;
+  background-color: #5f5f5f;
   border: 1px solid #d05373;
+  border: 1px solid #7d7d7d;
   border-radius: .1rem;
   color:#e0e3ff;
+  color: #e5e5e5;
   display: grid;
   /* grid-area: 1, 1, 2, 2; */
   max-width: 12rem;
@@ -160,19 +186,26 @@ small {
 
 .random-button:hover {
   background-color: #ff92ed;
+  background-color: #bdbdbd;
   border: 1px solid #ffb9b8;
+  border: 1px solid #cfcfcf;
   color: #181d49;
+  color: #212121;
 }
 
 .random-button:active {
   background-color: #232b6d;
+  background-color: #313131;
   border: 1px solid #4154d6;
+  border: 1px solid #5f5f5f;
   color: #ffa5bb;
+  color: #c3c3c3;
 }
 
 .p-final-message,
 .counter {
   color: #181d49;
+  color: #212121;
   display: grid;
   font-size: x-large;
   font-weight: 900;
@@ -182,8 +215,10 @@ small {
 /* form ---------------------------------------------- */
 .myForm {
   border: 1px solid #ffb9b8;
+  border: 1px solid #cfcfcf;
   border-radius: .2rem;
   color:#181d49;
+  color: #212121;
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -191,9 +226,12 @@ small {
 
 .myForm > * {
   background-color: #e0e3ff;
+  background-color: #e5e5e5;
   border: 1px solid #ffb9b8;
+  border: 1px solid #cfcfcf;
   border-radius: .1rem;
   color: #181d49;
+  color: #212121;
   margin: .5rem 0;
   padding: .5rem;
   resize: none;
@@ -206,22 +244,31 @@ small {
 
 .myForm > button {
   background-color: #4154d6;
+  background-color: #bdbdbd;
   border: 1px solid #d05373;
+  border: 1px solid #7d7d7d;
   border-radius: .2rem;
   color: #e0e3ff;
+  color: #e5e5e5;
   max-width: 12rem;
 }
 
-.myForm > button {
+.myForm > button:hover {
   background-color: #ff92ed;
+  background-color: #bdbdbd;
   border: 1px solid #ffb9b8;
+  border: 1px solid #cfcfcf;
   color: #181d49;
+  color: #212121;
 }
 
 .myForm > button:active {
   background-color: #232b6d;
+  background-color: #313131;
   border: 1px solid #4154d6;
+  border: 1px solid #5f5f5f;
   color: #ffa5bb;
+  color: #c3c3c3;
 }
 
 .card-demo {
@@ -238,6 +285,7 @@ small {
   border-top-left-radius: .15rem;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
   color: #181d49;
+  color: #212121;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -258,12 +306,14 @@ small {
 
 .p-question {
   color: #181d49;
+  color: #212121;
   font-weight: 500;
 }
 
 .my-card-h2 {
   border-bottom: 1px solid #ff5252;
   color:#181d49;
+  color: #212121;
   font-size: large;
   font-weight: 600;
   padding: .5rem .5rem 0 .5rem;
