@@ -22,35 +22,32 @@ export default function Flash(){
         title: "",
         answer: "",
     });
-    const [removal, setRemoval] = useState(-1);
+    const [prevCard, setPrevCard] = useState(current);
 
     const calcRandom = () => {
-        let randomIndex = Math.floor(Math.random() * cardList.length);
-        console.log("random num in randomizer: ", randomIndex);
+        let randomIndex = getRandomIndex();
         let currentCard = cardList[randomIndex];
+        if(currentCard === current) {
+            let skip = randomIndex;
+            randomIndex = Math.floor(Math.random() * cardList.length);
+        }
         setCurrent(currentCard);
-        console.log("current card from randomizer: ", currentCard);
     }
     
- 
+    const getRandomIndex = () => Math.floor(Math.random() * cardList.length);
+
     const removeShownCard = () => {        
         let removeElementIndex = cardList.findIndex(card => card === current);
-        console.log("remove card at index: ", removeElementIndex);
-        console.log("with that index remove this card in remover func: ", cardList[removeElementIndex]);
         setCardList(cardList.filter(card => card !== cardList[removeElementIndex]));
-        console.log("--------------------------------")
-        //update key or state in threeByFive component
-        // cardList.splice(seenCard, 1);
-        // setCardList(cardList); 
     }
-
+    
     const finalMessage = (cardList.length === 0) && <p className="p-final-message">{`Great Job! You got through ${deckLength} cards!`}</p>;
-
+    
     const cardToggle = (cardList.length !== 0) && <ThreeByFive question={current.question} title={current.title} answer={current.answer}/>;
-
+    
     function handleOnClick() {
-        calcRandom();
         removeShownCard();
+        calcRandom();
     }
 
     return(
