@@ -15,40 +15,57 @@ type Question = {
 
 export default function Flash(){
     const [deckLength] = useState(cardQuestions.length);
-    
     const [cardList, setCardList] = useState(cardQuestions);
+
     const [current, setCurrent] = useState<Question>({
         question: "",
         title: "",
         answer: "",
     });
     const [prevCard, setPrevCard] = useState(current);
+    let match = true;
 
     const calcRandom = () => {
-        let randomIndex = getRandomIndex();
+        let randomIndex = Math.floor(Math.random() * cardList.length);
         let currentCard = cardList[randomIndex];
-        if(currentCard === current) {
-            let skip = randomIndex;
-            randomIndex = Math.floor(Math.random() * cardList.length);
+        if(currentCard === prevCard) {
+            return undefined;
+            //if it finds the card already in (prev)state, return undefined
+        } else {
+            return currentCard;
         }
-        setCurrent(currentCard);
     }
-    
-    const getRandomIndex = () => Math.floor(Math.random() * cardList.length);
 
     const removeShownCard = () => {        
         let removeElementIndex = cardList.findIndex(card => card === current);
         setCardList(cardList.filter(card => card !== cardList[removeElementIndex]));
     }
-    
-    const finalMessage = (cardList.length === 0) && <p className="p-final-message">{`Great Job! You got through ${deckLength} cards!`}</p>;
-    
-    const cardToggle = (cardList.length !== 0) && <ThreeByFive question={current.question} title={current.title} answer={current.answer}/>;
-    
-    function handleOnClick() {
-        removeShownCard();
-        calcRandom();
+    function updates() {
+        let newCard = calcRandom();
+        console.log("newCard: ", newCard)
+        if (newCard) {
+            setPrevCard(newCard);
+            setCurrent(newCard);
+            match = true;
+        } 
+        if (!newCard) {
+            match = false;
+            //to catch duplicates
+        }
     }
+
+    function handleOnClick() {
+        console.log(cardList.length)
+        removeShownCard();
+        updates();
+        console.log("current: ", current);
+        if(!match) {
+            updates();
+        }
+    }
+
+    const finalMessage = (cardList.length === 0) && <p className="p-final-message">{`Great Job! You got through ${deckLength} cards!`}</p>;
+    const cardToggle = (cardList.length !== 0) && <ThreeByFive question={current.question} title={current.title} answer={current.answer}/>;
 
     return(
         <section className="flash-container">
