@@ -13,7 +13,7 @@ export default function Layout() {
             </div>
             <main>
                 <div>
-                    <div className="stripe"></div>
+                    {/* <div className="stripe"></div> */}
                     <Outlet />
                 </div>
             </main>
