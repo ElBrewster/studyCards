@@ -50,6 +50,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.status(404).send("Sorry can't find that!")
+  //getting a console error about error the message not being valid JSON?
 })
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {

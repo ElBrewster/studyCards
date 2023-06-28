@@ -5,6 +5,8 @@
 import cardQuestions from "../data/cardQuestions";
 import ThreeByFive from "../components/ThreeByFive";
 import { useState } from "react";
+import { nanoid } from "nanoid";
+
 
 type Question = {
     question: string,
@@ -23,6 +25,7 @@ export default function Flash(){
         answer: "",
     });
     const [prevCard, setPrevCard] = useState(current);
+    let key = nanoid();
     let match = true;
 
     const calcRandom = () => {
@@ -42,7 +45,6 @@ export default function Flash(){
     }
     function updates() {
         let newCard = calcRandom();
-        console.log("newCard: ", newCard)
         if (newCard) {
             setPrevCard(newCard);
             setCurrent(newCard);
@@ -55,22 +57,27 @@ export default function Flash(){
     }
 
     function handleOnClick() {
-        console.log(cardList.length)
         removeShownCard();
         updates();
-        console.log("current: ", current);
         if(!match) {
             updates();
         }
     }
 
+    function handleRestartClick() {
+        setCardList(cardQuestions);
+        setPrevCard(current);
+    }
+
+
     const finalMessage = (cardList.length === 0) && <p className="p-final-message">{`Great Job! You got through ${deckLength} cards!`}</p>;
-    const cardToggle = (cardList.length !== 0) && <ThreeByFive question={current.question} title={current.title} answer={current.answer}/>;
+    const cardToggle = (cardList.length !== 0) && <ThreeByFive key={key} question={current.question} title={current.title} answer={current.answer}/>;
 
     return(
         <section className="flash-container">
             <div className="button-and-counter-container">
                 <button className="random-button" onClick={handleOnClick}>Get A Card</button>
+                <button className="random-button" onClick={handleRestartClick}>Go Again</button>
                 <div className="counter">{cardList.length}</div>
             </div>
             {cardToggle}
