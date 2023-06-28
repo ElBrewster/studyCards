@@ -42,7 +42,6 @@ export default function Flash(){
     }
     function updates() {
         let newCard = calcRandom();
-        console.log("newCard: ", newCard)
         if (newCard) {
             setPrevCard(newCard);
             setCurrent(newCard);
@@ -55,10 +54,8 @@ export default function Flash(){
     }
 
     function handleOnClick() {
-        console.log(cardList.length)
         removeShownCard();
         updates();
-        console.log("current: ", current);
         if(!match) {
             updates();
         }
@@ -67,7 +64,6 @@ export default function Flash(){
     function handleRestartClick() {
         setCardList(cardQuestions);
         setPrevCard(current);
-        console.log("restart!")
     }
 
 
@@ -79,7 +75,6 @@ export default function Flash(){
             <div className="button-and-counter-container">
                 <button className="random-button" onClick={handleOnClick}>Get A Card</button>
                 <button className="random-button" onClick={handleRestartClick}>Go Again</button>
-
                 <div className="counter">{cardList.length}</div>
             </div>
             {cardToggle}
