@@ -5,6 +5,8 @@
 import cardQuestions from "../data/cardQuestions";
 import ThreeByFive from "../components/ThreeByFive";
 import { useState } from "react";
+import { nanoid } from "nanoid";
+
 
 type Question = {
     question: string,
@@ -23,6 +25,7 @@ export default function Flash(){
         answer: "",
     });
     const [prevCard, setPrevCard] = useState(current);
+    let key = nanoid();
     let match = true;
 
     const calcRandom = () => {
@@ -68,7 +71,7 @@ export default function Flash(){
 
 
     const finalMessage = (cardList.length === 0) && <p className="p-final-message">{`Great Job! You got through ${deckLength} cards!`}</p>;
-    const cardToggle = (cardList.length !== 0) && <ThreeByFive question={current.question} title={current.title} answer={current.answer}/>;
+    const cardToggle = (cardList.length !== 0) && <ThreeByFive key={key} question={current.question} title={current.title} answer={current.answer}/>;
 
     return(
         <section className="flash-container">
