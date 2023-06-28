@@ -64,6 +64,13 @@ export default function Flash(){
         }
     }
 
+    function handleRestartClick() {
+        setCardList(cardQuestions);
+        setPrevCard(current);
+        console.log("restart!")
+    }
+
+
     const finalMessage = (cardList.length === 0) && <p className="p-final-message">{`Great Job! You got through ${deckLength} cards!`}</p>;
     const cardToggle = (cardList.length !== 0) && <ThreeByFive question={current.question} title={current.title} answer={current.answer}/>;
 
@@ -71,6 +78,8 @@ export default function Flash(){
         <section className="flash-container">
             <div className="button-and-counter-container">
                 <button className="random-button" onClick={handleOnClick}>Get A Card</button>
+                <button className="random-button" onClick={handleRestartClick}>Go Again</button>
+
                 <div className="counter">{cardList.length}</div>
             </div>
             {cardToggle}
