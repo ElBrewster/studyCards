@@ -111,12 +111,43 @@ footer {
 }
 
 .add-container,
-.browse-section,
+.browse-container,
 .flash-container {
   background-color: #2d2144;
   display: grid;
   gap: 1rem;
   padding: 1rem;
+}
+
+.button-and-counter-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.random-button {
+  background-color: #d46ec0;
+  border: 1px solid purple;
+  border-radius: .1rem;
+  color:#085c6b;
+  display: grid;
+  /* grid-area: 1, 1, 2, 2; */
+  max-width: 12rem;
+  padding: .5rem;
+}
+
+.counter {
+  display: grid;
+  font-size: x-large;
+  font-weight: 900;
+  /* grid-area: 1, 2, 2, 3; */
+}
+.random-button:hover {
+  background-color: #db2fb8;
+}
+
+.random-button:active {
+  background-color: #7fc7d4;
 }
 
 /* form ---------------------------------------------- */
