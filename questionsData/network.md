@@ -120,3 +120,11 @@ _another example:_
 
 (Topic: browser)
 The browser can only read three things: HTML, JavaScript, and CSS
+
+- What is "request-response" (aka "request-reply")?
+  Request-response is one of the basic methods computers use to communicate with each other in a network: a computer first sends a request for some data, and the second responds to the request. It is a message exchange pattern in which a requestor sends a request message to a replier system, which receives and processes the request, ultimately returning a message in response. It is analogous to a telephone call, in which the caller must wait for the recipient to pick up before anything can be discussed. This is a simple but powerful messaging pattern which allows two applications to have a two-way conversation with one another over a channel; it is especially common in client-server architectures.
+  This pattern
+
+- What is CORS?
+  Cross-Origin Resource Sharing is an HTTP-header based mechanism that allows a server to indicate any origins other than its own from which a browser should permit loading resources. CORS uses a mechanism where browsers make a "preflight" request to the server hosting the cross-origin resource, in order to check that the server will permit the actual request. In that preflight, the browser sends headers that indicate the HTTP method and headers that will be used in teh actual request. CORS is a security feature.
+  Same-origin requests are always allowed, Cross-origin requests are controlled by CORS.
