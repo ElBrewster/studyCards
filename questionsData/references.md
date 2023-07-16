@@ -9,3 +9,5 @@
 - MDN articles
 
 (on app localization)[https://learn.microsoft.com/en-us/windows/apps/design/globalizing/prepare-your-app-for-localization]
+
+(on request-response)[https://en.wikipedia.org/wiki/Request%E2%80%93response]
