@@ -126,5 +126,7 @@ The browser can only read three things: HTML, JavaScript, and CSS
   This pattern
 
 - What is CORS?
-  Cross-Origin Resource Sharing is an HTTP-header based mechanism that allows a server to indicate any origins other than its own from which a browser should permit loading resources. CORS uses a mechanism where browsers make a "preflight" request to the server hosting the cross-origin resource, in order to check that the server will permit the actual request. In that preflight, the browser sends headers that indicate the HTTP method and headers that will be used in teh actual request. CORS is a security feature.
+  Cross-Origin Resource Sharing is an HTTP-header based mechanism that allows a server to indicate any origins other than its own from which a browser should permit loading resources. CORS uses a mechanism where browsers make a "preflight" request to the server hosting the cross-origin resource, in order to check that the server will permit the actual request. In that preflight, the browser sends headers that indicate the HTTP method and headers that will be used in the actual request. CORS is a security feature providing HTTP access control.
   Same-origin requests are always allowed, Cross-origin requests are controlled by CORS.
+
+  The CORS standard works by adding new HTTP headers that let servers describe which origins are permitted to read that information from a web browser.
