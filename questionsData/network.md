@@ -130,3 +130,9 @@ The browser can only read three things: HTML, JavaScript, and CSS
   Same-origin requests are always allowed, Cross-origin requests are controlled by CORS.
 
   The CORS standard works by adding new HTTP headers that let servers describe which origins are permitted to read that information from a web browser.
+
+- What is a 304 response code?
+  "304 Not Modified" indicates theres' no need to retransmit the requested resources. It is an implicit redirection to a cached resource.
+
+- What is a 500 response code?
+  "500 Internal Server Error" is a server error response code that indicates that the server encountered an unexpected condition that prevented it from fulfilling the request. It is a generic "catch-all" response. Usually this indicates that the server can't find a better 5xx error code response.
