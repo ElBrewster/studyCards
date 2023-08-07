@@ -20,3 +20,8 @@ export default function App() {
     </div>
   )
 }
+
+// ! important
+// TODO: THIS is a TODO comment
+// ? This is a question comment
+// * This is a highlighted comment

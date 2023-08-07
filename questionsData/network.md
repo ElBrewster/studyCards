@@ -136,3 +136,5 @@ The browser can only read three things: HTML, JavaScript, and CSS
 
 - What is a 500 response code?
   "500 Internal Server Error" is a server error response code that indicates that the server encountered an unexpected condition that prevented it from fulfilling the request. It is a generic "catch-all" response. Usually this indicates that the server can't find a better 5xx error code response.
+
+-status code 401: unauthorized
