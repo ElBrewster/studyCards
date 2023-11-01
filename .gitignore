@@ -11,7 +11,6 @@ node_modules
 dist
 dist-ssr
 *.local
-docs
 
 # Editor directories and files
 .vscode/*
@@ -24,5 +23,18 @@ docs
 *.sln
 *.sw?
 
-workspaces.md
-
+docs/2fa-codes-slack.md
+docs/autism.md
+docs/certifications.md
+docs/chat_gpt_copypasta.md
+docs/checklist.md
+docs/conversation.md
+docs/jerb.md
+docs/leet_js_questions.md
+docs/linkedin.md
+docs/pattyp.md
+docs/portfolio.md
+project_with_Rick.md
+docs/renter.md
+docs/thomasProject.md
+docs/uber.md

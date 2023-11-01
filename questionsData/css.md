@@ -166,3 +166,9 @@ My tip: Something that helped me become more efficient when writing CSS was to r
 
 - What are some of the newest additions to CSS3?
   (not all these are supported across all browser yet!) subgrid, accent-color, ::marker, :has(), :where(), media query ranges using <= ex: `@media (width <= 30rem){}`
+
+the grid or flex is changing the inside, not the parent container itself. So a flex item can contain the grid display
+
+## Good Resources--------------------
+
+5t3ph is the best [a conf talk](https://www.youtube.com/watch?v=Y50iqMlrqU8)
